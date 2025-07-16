@@ -1,0 +1,15 @@
+@startuml
+actor 用戶
+cloud CDN
+component 靜態資源
+component Gateway
+component 應用
+storage 緩存
+
+用戶 --> CDN
+CDN --> 靜態資源
+用戶 --> Gateway
+Gateway --> 應用
+緩存 --> 應用
+Gateway --> 緩存
+@enduml
