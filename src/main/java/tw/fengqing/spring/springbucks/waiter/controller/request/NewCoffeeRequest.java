@@ -1,4 +1,4 @@
-package geektime.spring.springbucks.waiter.controller.request;
+package tw.fengqing.spring.springbucks.waiter.controller.request;
 
 import lombok.Getter;
 import lombok.Setter;

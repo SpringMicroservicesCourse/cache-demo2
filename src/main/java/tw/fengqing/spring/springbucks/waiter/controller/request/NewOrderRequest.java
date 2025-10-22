@@ -1,4 +1,4 @@
-package geektime.spring.springbucks.waiter.controller.request;
+package tw.fengqing.spring.springbucks.waiter.controller.request;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,5 +11,5 @@ import java.util.List;
 @ToString
 public class NewOrderRequest {
     private String customer;
-    private java.util.List<String> items;
+    private List<String> items;
 }

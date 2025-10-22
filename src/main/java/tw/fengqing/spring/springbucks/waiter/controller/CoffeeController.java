@@ -1,8 +1,8 @@
-package geektime.spring.springbucks.waiter.controller;
+package tw.fengqing.spring.springbucks.waiter.controller;
 
-import geektime.spring.springbucks.waiter.controller.request.NewCoffeeRequest;
-import geektime.spring.springbucks.waiter.model.Coffee;
-import geektime.spring.springbucks.waiter.service.CoffeeService;
+import tw.fengqing.spring.springbucks.waiter.controller.request.NewCoffeeRequest;
+import tw.fengqing.spring.springbucks.waiter.model.Coffee;
+import tw.fengqing.spring.springbucks.waiter.service.CoffeeService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -26,11 +26,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.multipart.MultipartFile;
 
+
 import jakarta.validation.Valid;
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOError;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -99,7 +97,7 @@ public class CoffeeController {
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+            produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<Coffee> getById(@PathVariable Long id) {
         Coffee coffee = coffeeService.getCoffee(id);

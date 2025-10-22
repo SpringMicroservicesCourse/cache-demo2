@@ -1,4 +1,4 @@
-package geektime.spring.springbucks.waiter;
+package tw.fengqing.spring.springbucks.waiter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

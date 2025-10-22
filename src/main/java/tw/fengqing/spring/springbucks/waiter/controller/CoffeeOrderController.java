@@ -1,10 +1,10 @@
-package geektime.spring.springbucks.waiter.controller;
+package tw.fengqing.spring.springbucks.waiter.controller;
 
-import geektime.spring.springbucks.waiter.controller.request.NewOrderRequest;
-import geektime.spring.springbucks.waiter.model.Coffee;
-import geektime.spring.springbucks.waiter.model.CoffeeOrder;
-import geektime.spring.springbucks.waiter.service.CoffeeOrderService;
-import geektime.spring.springbucks.waiter.service.CoffeeService;
+import tw.fengqing.spring.springbucks.waiter.controller.request.NewOrderRequest;
+import tw.fengqing.spring.springbucks.waiter.model.Coffee;
+import tw.fengqing.spring.springbucks.waiter.model.CoffeeOrder;
+import tw.fengqing.spring.springbucks.waiter.service.CoffeeOrderService;
+import tw.fengqing.spring.springbucks.waiter.service.CoffeeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,7 +32,7 @@ public class CoffeeOrderController {
     }
 
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+            produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public CoffeeOrder create(@RequestBody NewOrderRequest newOrder) {
         log.info("Receive new Order {}", newOrder);

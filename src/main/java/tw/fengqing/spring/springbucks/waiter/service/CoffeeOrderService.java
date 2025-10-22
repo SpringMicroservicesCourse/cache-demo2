@@ -1,13 +1,14 @@
-package geektime.spring.springbucks.waiter.service;
+package tw.fengqing.spring.springbucks.waiter.service;
 
-import geektime.spring.springbucks.waiter.model.Coffee;
-import geektime.spring.springbucks.waiter.model.CoffeeOrder;
-import geektime.spring.springbucks.waiter.model.OrderState;
-import geektime.spring.springbucks.waiter.repository.CoffeeOrderRepository;
+import tw.fengqing.spring.springbucks.waiter.model.Coffee;
+import tw.fengqing.spring.springbucks.waiter.model.CoffeeOrder;
+import tw.fengqing.spring.springbucks.waiter.model.OrderState;
+import tw.fengqing.spring.springbucks.waiter.repository.CoffeeOrderRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import jakarta.persistence.EntityNotFoundException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,8 +20,10 @@ public class CoffeeOrderService {
     @Autowired
     private CoffeeOrderRepository orderRepository;
 
-    public CoffeeOrder get(Long id) {
-        return orderRepository.getOne(id);
+  public CoffeeOrder get(Long id) {
+        // 查詢不存在ID或該筆訂單未完成交易時，會拋出 EntityNotFoundException 異常
+        return orderRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Order not found, ID: " + id));
     }
 
     public CoffeeOrder createOrder(String customer, Coffee...coffee) {

@@ -1,4 +1,4 @@
-package geektime.spring.springbucks.waiter;
+package tw.fengqing.spring.springbucks.waiter;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

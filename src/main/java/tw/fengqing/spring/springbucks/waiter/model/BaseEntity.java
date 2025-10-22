@@ -1,4 +1,4 @@
-package geektime.spring.springbucks.waiter.model;
+package tw.fengqing.spring.springbucks.waiter.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

@@ -1,6 +1,6 @@
-package geektime.spring.springbucks.waiter.repository;
+package tw.fengqing.spring.springbucks.waiter.repository;
 
-import geektime.spring.springbucks.waiter.model.Coffee;
+import tw.fengqing.spring.springbucks.waiter.model.Coffee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
